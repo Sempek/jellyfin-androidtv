@@ -25,6 +25,8 @@ import org.jellyfin.androidtv.data.repository.ItemMutationRepository
 import org.jellyfin.androidtv.data.repository.ItemMutationRepositoryImpl
 import org.jellyfin.androidtv.data.repository.NotificationsRepository
 import org.jellyfin.androidtv.data.repository.NotificationsRepositoryImpl
+import org.jellyfin.androidtv.data.repository.SempickRepository
+import org.jellyfin.androidtv.data.repository.SempickRepositoryImpl
 import org.jellyfin.androidtv.data.repository.UserViewsRepository
 import org.jellyfin.androidtv.data.repository.UserViewsRepositoryImpl
 import org.jellyfin.androidtv.data.service.BackgroundService
@@ -44,6 +46,7 @@ import org.jellyfin.androidtv.ui.search.SearchFragmentDelegate
 import org.jellyfin.androidtv.ui.search.SearchRepository
 import org.jellyfin.androidtv.ui.search.SearchRepositoryImpl
 import org.jellyfin.androidtv.ui.search.SearchViewModel
+import org.jellyfin.androidtv.ui.sempick.SempickViewModel
 import org.jellyfin.androidtv.ui.settings.compat.SettingsViewModel
 import org.jellyfin.androidtv.ui.startup.ServerAddViewModel
 import org.jellyfin.androidtv.ui.startup.StartupViewModel
@@ -142,6 +145,7 @@ val appModule = module {
 	single<SearchRepository> { SearchRepositoryImpl(get()) }
 	single<MediaSegmentRepository> { MediaSegmentRepositoryImpl(get(), get()) }
 	single<ExternalAppRepository> { ExternalAppRepository(get()) }
+	single<SempickRepository> { SempickRepositoryImpl(get(), get(), get(), get()) }
 
 	viewModel { StartupViewModel(get(), get(), get(), get()) }
 	viewModel { UserLoginViewModel(get(), get(), get(), get(defaultDeviceInfo)) }
@@ -150,6 +154,7 @@ val appModule = module {
 	viewModel { StillWatchingViewModel(get(), get(), get(), get()) }
 	viewModel { PhotoPlayerViewModel(get()) }
 	viewModel { SearchViewModel(get()) }
+	viewModel { SempickViewModel(get()) }
 	viewModel { DreamViewModel(get(), get(), get(), get(), get()) }
 	viewModel { SettingsViewModel() }
 

@@ -24,6 +24,7 @@
     <string name="lbl_status">%1$s / %2$s</string>
     <string name="lbl_genres">Genres</string>
     <string name="lbl_search">Search</string>
+    <string name="lbl_sempick">Sempick</string>
     <string name="msg_not_implemented">" not implemented"</string>
     <string name="lbl_latest">Recently added</string>
     <string name="lbl_latest_in">Recently added in %1$s</string>
